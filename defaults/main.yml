@@ -45,3 +45,4 @@ telegraf_inputs: []
 # - name: disk
 #   config:
 #     - mount_points = ["/", "/data"]
+telegraf_processors: []

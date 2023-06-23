@@ -62,3 +62,12 @@
 {%     endfor %}
 {%  endif %}
 {% endfor %}
+
+{% if telegraf_processors != '' %}
+  {% for processor in telegraf_processors %}
+    [[processors.{{ processor.name }}]]
+    {%   for item in processor.config | d([]) %}
+      {{ item }}
+    {%   endfor %}
+    {% endfor %}
+{% endif %}
